@@ -4,9 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-const VueFire = require('vuefire')
-const firebase = require('firebase')
-const axios = require('axios')
+import 'bootstrap/dist/css/bootstrap.min.css'
+import VueFire from 'vuefire'
+import firebase from 'firebase'
+import axios from 'axios'
+import * as uiv from 'uiv'
 
 const config = {
   apiKey: process.env.FIREBASEKEY,
@@ -21,7 +23,9 @@ Vue.prototype.$db = db.ref('todo')
 Vue.prototype.$http = axios.create({
   baseURL: 'http://localhost:3000/'
 })
+
 Vue.use(VueFire)
+Vue.use(uiv)
 
 Vue.config.productionTip = false
 
